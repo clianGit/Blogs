@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Categories</title>
+    <title></title>
     <meta name="description" content="">
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4000/category/">
+    <link rel="canonical" href="http://localhost:4000/">
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml ">
 
 
@@ -31,8 +31,8 @@
             <ul>
                 <li>
                     
-                    <a href="/">
-                    
+                    <a class="active" href="/">
+                        
                         <i class="fa fa-home"></i>Home
                     </a>
                 </li>
@@ -51,8 +51,8 @@
                     
                     <li>
                         
-                        <a class="active" href="/category/">
-                            
+                        <a href="/category/">
+                        
                             <i class="fa fa-th-list"></i>Categories
                         </a>
                     </li>
@@ -80,86 +80,103 @@
 </header>
 
 
-        <div class="page clearfix">
+        <div class="page clearfix" index>
     <div class="left">
-        <h1>Categories</h1>
+        <h1>Welcome to my Blog!</h1>
+        <small>My god is Linus</small>
         <hr>
         <ul>
             
-            <h2 id="jekyll">jekyll</h2>
-                
-                    
-                        
-                    
-                
-                    
-                        
-                        <li>
-                            <time>
-                            2017-01-12 Thu.
-                            </time>
-                            <a class="title" href="/jekyll/2017/01/12/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-
-                            
-
-
-<!-- <span class="point">•</span> -->
-<span class="categories">
-  <i class="fa fa-th-list"></i>
-  
-    
-        <a href="/#jekyll" title="Category: jekyll" rel="category">jekyll</a>
-    
-  
-
-  <!-- <span class="point">•</span> -->
-</span>
-
-
-                            
-<!-- <span class="point">•</span> -->
-<span class="pageTag">
-  <i class="fa fa-tags"></i>
-  
-    
-        <a href="/#jekyll" title="Tag: jekyll" rel="tag">jekyll</a>
-    
-  
-
-</span>
-
-                        </li>
-                        
-                    
-                
-            
         </ul>
+
+
+
+        <!-- Pagination links -->
+        <div class="pagination">
+          
+            <span class="previous disable"><i class="fa fa-angle-double-left"></i></span>
+            <span class="previous disable"><i class="fa fa-angle-left"></i></span>
+          
+          <span class="page_number ">/</span>
+          
+            <span class="next disable"><i class="fa fa-angle-right"></i></span>
+            <span class="next disable"><i class="fa fa-angle-double-right"></i></span>
+          
+        </div>
     </div>
-    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
     <div class="right">
         <div class="wrap">
+            <div class="side">
+                <div>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Recent Posts
+                </div>
+                <ul class="content-ul" recent>
+                    
+                        <li><a href="/jekyll/2017/01/12/welcome-to-jekyll.html">Welcome to Jekyll!</a></li>
+                    
+                </ul>
+            </div>
 
             <!-- Content -->
-            <div class="side content">
+            <div class="side ">
                 <div>
-                    Content
+                    <i class="fa fa-th-list"></i>
+                    Categories
                 </div>
-                <ul id="content-side" class="content-ul">
+                <ul class="content-ul" cate>
                     
-                        <li>
-                            <a class="scroll" href="#jekyll">
-                                jekyll (1)
-                            </a>
-                        </li>
+                    <li>
+                        <a href="/#jekyll" class="categories-list-item" cate="jekyll">
+                            <span class="name">
+                                jekyll
+                            </span>
+                            <span class="badge">1</span>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
             <!-- 其他div框放到这里 -->
-            <!-- <div class="side">bbbb</div> -->
+            <div class="side">
+                <div>
+                    <i class="fa fa-tags"></i>
+                    Tags
+                </div>
+                <div class="tags-cloud">
+                    
+                    
+                    
+                    
+
+                    
+
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/#jekyll" style="font-size: 9pt; color: #999;">jekyll</a>
+                    
+                </div>
+            </div>
+
+            <!-- <div class="side">
+                <div>
+                    <i class="fa fa-external-link"></i>
+                    Links
+                </div>
+                <ul  class="content-ul">
+
+                </ul>
+            </div> -->
         </div>
     </div>
 </div>
-<script src="/js/pageContent.js " charset="utf-8"></script>
+<!-- <script src="/js/scroll.min.js " charset="utf-8"></script> -->
+<!-- <script src="/js/pageContent.js " charset="utf-8"></script> -->
 
 
     <footer class="site-footer">
