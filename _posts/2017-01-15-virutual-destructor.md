@@ -14,7 +14,7 @@ C++ 中，子类的在销毁时，调用析构函数的顺序。
 
 ## C++ 析构函数
 
-`C++ 析构函数`(*Destructor*)是一种特殊的成员函数。析构函数与类同名，并在前面加~，它没有参数返回值，在对象销毁的时候执行。但在C++中，对象可以分配在`自由存储区`(*free store*，*`Note：The free store is one of the dyanmic memory areas,allocated/freed by new/delete;the heap is the other memory area,allocated/freed by malloc/free and their variants.In C++,the default global new and delete might be implemented in terms of malloc and free by a particular complier`*)和`栈区`（*stack*）。因此，对象的销毁存在两种方式:
+`C++ 析构函数`(*Destructor*)是一种特殊的成员函数。析构函数与类同名，并在前面加~，它没有参数和返回值，在对象销毁的时候执行。但在C++中，对象可以分配在`自由存储区`(*free store*，*`Note：The free store is one of the dyanmic memory areas,allocated/freed by new/delete;the heap is the other memory area,allocated/freed by malloc/free and their variants.In C++,the default global new and delete might be implemented in terms of malloc and free by a particular complier`*)和`栈区`（*stack*）。因此，对象的销毁存在两种方式:
 
 * **1、当对象分配在栈区时，并且代码执行流程离开对象的作用域时，对象会自动调用自己的析构函数进行销毁。**
 
