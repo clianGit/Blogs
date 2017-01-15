@@ -27,6 +27,9 @@ c++虚函数就是在函数前加上`virtual`关键字，子类可以根据自�
 ## 程序和结果
 
 **Talk is cheap , put the code !**
+
+
+
 * **析构函数没有virtual，对象分配在堆区**
 
 
