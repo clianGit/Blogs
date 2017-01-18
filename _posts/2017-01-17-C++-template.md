@@ -13,12 +13,18 @@ excerpt: C++ is not c with class, template makes C++ powerful。
 C++ is not c with class, template makes C++ powerful。
 
 # C++ 模板
+
+
 C++模板是为类或函数提供一种在编译期进行参数转换的能力。template中的参数可以是基本数据类型和自定义数据类型，参数也可以为兼容int类型(char，bool等）的变量，当然template也可以是参数和兼容int类型变量的组合。`(个人理解)`
 
 ## C++ 泛型编程
+
+
 C++泛型编程为不同数据类型提供统一的类或函数。比如，一个通用的数据结构队列，可以为基本数据类型int、double或者自定义类型string等产生各自的队列；也可以为一个比较大小的通用算法产生各种不同数据类型的比较大小算法。
 
 ### 模板函数
+
+
 ```c++
 #include<iostream>
 
@@ -140,6 +146,8 @@ int main()
 }
 ```
 ### template 为自定义类型
+
+
 ```c++
 #include<iostream>
 
@@ -210,6 +218,8 @@ char类型兼容int类型，将其中的int换成char和bool类型也可。但�
 
 
 ### template 为数据类型和兼容int类型的组合
+
+
 ```c++
 #include<iostream>
 #include<string>
@@ -236,6 +246,8 @@ int main()
 
 
 ## 特化
+
+
 特化是将template的数据类型指定为具体的数据类型，比如typename T 中可以指定T 为int或将父类的类型指定为子类类型。代码如下：
 
 
@@ -293,6 +305,8 @@ int main()
 ```
 
 template为兼容int类型的变量时，其实就是对int类型变量的一种特化。
+
+
 ```c++
 #include<iostream>
 
@@ -320,13 +334,21 @@ int main()
 
 
 ### 偏特化
+
+
 偏特化就是对多个template类型中的内容，只部分特化。
 
 ### 全特化
-全特化就是能列出来所有的情况
+
+
+全特化就是对多个template类型中的内容，对其全部特化。
 
 ## Traits
+
+
 Traits 是一种在程序编译期间根据型别作出判断的泛型技术。这能写出容易理解和更易维护的代码。
+
+
 ```c++
 #include<iostream>
 
