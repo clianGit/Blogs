@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  "C++中虚析构函数的调用顺序"
+title:  "C++中析构函数的调用顺序"
 author: chenlian
 categories: C++
 tags: C++ destructor
-excerpt: C++ 中，子类的在销毁时，调用析构函数的顺序。
+excerpt: C++ 中，子类在销毁时，调用析构函数的顺序。
 ---
 
 
 * content
 {:toc}
-C++ 中，子类的在销毁时，调用析构函数的顺序。
+C++ 中，子类在销毁时，调用析构函数的顺序。
 
 ## C++ 析构函数
 
@@ -284,7 +284,7 @@ int main()
 ```
 
 
-(`Note：以下分析中son,Son,father,Father 中，开头为小写为对象，即object，开头大写为对象，即class`）
+(`Note：以下分析中son,Son,father,Father 中，开头为小写为对象，即object，开头大写为类，即class`）
 
 
 一个变量的类型是用来解释变量的，当一个son对象的类型是Father * 类型时，这个对象的指针的有效范围为Son class 对象中Father base class的范围，也就不能访问到除Father base class的son 类对象中的内容（`Note：析构函数不为virtual时，父类析构函数属于Father base class，而子类析构函数属于Son class，而不属于Father base class`）。因此，当一个子类对象的类型为父类时，其并不能调用到属于子类对象而不属于父类对象中的析构函数(此时，析构函数为非virtual)。而当一个son对象的类型是Son *　类型时，Son对象调用析构函数，可以访问到Son class 的析构函数，并且当son对象调用Son class 的析构函数时，son对象会销毁属于Son class 的而不属于Father class 的部分，也就是说当son对象调用Son class 的析构函数完成时，son对象会变成一个father对象，并且会再自动调用Father class 的析构函数。此过程会持续进行，直到对象完全销毁。（`Note：一个子对象构造时，会先调用父类的构造函数，再调用子类的构造函数，并且构造函数与析构函数不同，不能为virutal，且在对象构造时会按照固定的顺序自动调用。而当子类对象能访问子类和父类的析构函数时，顺序与构造函数相反，会先调用子类的析构函数，在调用父类的析构函数`）
