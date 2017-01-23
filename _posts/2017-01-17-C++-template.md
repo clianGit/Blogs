@@ -39,7 +39,7 @@ public:
 	my_class(int __Int_num):_Int_num(__Int_num){}
 	
 	/* 重载==运算符 */
-	friend bool operator ==(my_class & __my_class_one,my_class & __my_class_two){
+	friend bool operator ==(const my_class & __my_class_one,const my_class & __my_class_two){
 		if(__my_class_one._Int_num == __my_class_two._Int_num){
 			return true;
 		}else{
@@ -48,7 +48,7 @@ public:
 	}
 	
 	/* 重载 > 运算符  */ 
-	friend bool operator >(my_class & __my_class_one,my_class & __my_class_two){
+	friend bool operator >(const my_class & __my_class_one,const my_class & __my_class_two){
 		if(__my_class_one._Int_num > __my_class_two._Int_num){
 			return true;
 		}else{
@@ -56,7 +56,7 @@ public:
 		}	
 	}
 	/* 重载 < 运算符 */
-	friend bool operator <(my_class & __my_class_one,my_class & __my_class_two){
+	friend bool operator <(const my_class & __my_class_one,const my_class & __my_class_two){
 		if(__my_class_one._Int_num < __my_class_two._Int_num){
 			return true;
 		}else{
@@ -64,9 +64,9 @@ public:
 		}	
 	}
 };
-/* 模板函数 */
+
 template<typename T>
-int compare(T & __T_var_a, T & __T_var_b)
+int compare(const T & __T_var_a,const  T & __T_var_b)
 {
 	if(__T_var_a == __T_var_b){
 		return 0;
@@ -83,10 +83,15 @@ int compare(T & __T_var_a, T & __T_var_b)
 
 int main(void)
 {
+	
+	cout<<compare(3,3)<<endl;
+	
 	/* 基本类型int比较 */ 
 	int Int_one = 3;
 	int Int_two = 2;
 	cout<<compare<int>(Int_one,Int_two)<<endl;
+	
+	
 	
 	/* 基本类型double比较 */
 	double Double_one = 2.2;
@@ -100,6 +105,7 @@ int main(void)
 	
 	return 0;
 }
+
 
 ```
 
