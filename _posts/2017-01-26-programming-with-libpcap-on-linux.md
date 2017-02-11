@@ -23,11 +23,15 @@ libpcap是Unix/Linxu 平台下的网络数据包捕获函数包，大多数网�
 
 
 char * pcap_lookupdev(char * ebuf);
+
+
 * 返回值　： 返回第一个网络设备名（不会为“lookback”回环接口）；没找到网络设备，返回NULL。
 * ebuf ：出错信息，没找到网络设备，"No driver found"
 
 
 int pcap_lookupnet(const char * device, bpf_u_int32 * localnet,bpf_u_int32 * netmask,char * errbuf);
+
+
 * 返回值 ：出错返回 -1 ， 成功 1。
 * device ： 网络设备名
 * localnet : 本地网络号
@@ -36,6 +40,8 @@ int pcap_lookupnet(const char * device, bpf_u_int32 * localnet,bpf_u_int32 * net
 
 
 pcap_t * pcap_open_live(char * device,int snaplen,int promisc,int to_ms,char * ebuf);
+
+
 * 返回值 ： 成功返回pcap_t 指针；出错，返回 NULL
 * device : 打开的网络设备名
 * snaplen : 转包的最大的长度
@@ -45,6 +51,8 @@ pcap_t * pcap_open_live(char * device,int snaplen,int promisc,int to_ms,char * e
 
 
 int pcap_compile(pcap_t * p , struct bfp_program * program, const char * buf,int optimize,bpf_u_int32 mask);
+
+
 * 返回值 ：　成功返回０；　出错，返回－１
 * pcap_t　： 打开的会话的指针
 * program : 存储 pcap_compile 的过滤的信息的指针
@@ -52,17 +60,23 @@ int pcap_compile(pcap_t * p , struct bfp_program * program, const char * buf,int
 * mask ：网络子网掩码
 
 int pcap_setfilter(pcap_t * p , struct bpf_program * fp);
+
+
 * 返回值 ：　成功返回０；出错返回　－１　
 * pcap_t　：　打开的会话的指针
 * fp :  存储 pcap_compile 的过滤的信息的指针
 
 
 const u_char * pcap_next(pcap_t * p,struct pcap_pkthdr *h);
+
+
 * 返回值 ： 成功数据包的内存地址；出错返回0；
 * p :  打开的会话的指针
 * h :  pcap的数据包的通用信息的指针
 
 int pcap_loop(pcap_t * p , int cnt, pcap_handler callback, u_char * user);
+
+
 * 返回值 ： 0 读结束
 * p ： 打开的会话的指针
 * cnt ： 嗅探的数据包的个数。小于或等于0，则一直抓包
@@ -72,6 +86,8 @@ int pcap_loop(pcap_t * p , int cnt, pcap_handler callback, u_char * user);
 
 回调函数的格式：
 void (* ) (u_char * args , const struct pcap_pkthad * header,const u_char *packet);
+
+
 * args :  pcap_loop()函数的最后一个参数。
 * header ： pcap的数据包的通用信息的指针
 * packet :  数据包的指针
