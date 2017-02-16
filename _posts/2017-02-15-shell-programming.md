@@ -73,7 +73,7 @@ $(()) 可用来整数运算，整数运算算符有：
 expr 命令计算运算
 
 
-> echo $(expr 1 + 2)  或  var=`expr 1 + 2`
+> echo $(expr 1 + 2)  或  var=\` expr 1 + 2 \`
 
 
 
@@ -230,7 +230,7 @@ function_name() {
 ## 例子
 
 
-测试网段能ping 同的ip，并保存到文件中
+测试网段能ping 通的ip，并保存到文件中
 
 
 ```shell
